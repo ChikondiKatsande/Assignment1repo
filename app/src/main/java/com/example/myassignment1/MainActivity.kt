@@ -1,4 +1,4 @@
-package com.example.socialsparks
+package com.example.myassignment1
 
 import android.os.Bundle
 import android.widget.*
