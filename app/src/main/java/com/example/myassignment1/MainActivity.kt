@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
             spinnerTime.setSelection(0)
 
             // Reset the result text to default message
-            txtResult.text = "Your suggestion will appear here 💡"
+            txtResult.text = "Suggested Activity"
         }
     }
 }
