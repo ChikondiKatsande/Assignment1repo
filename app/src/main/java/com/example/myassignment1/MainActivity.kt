@@ -6,24 +6,25 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var spinnerTime: Spinner
-    lateinit var btnSuggest: Button
-    lateinit var btnReset: Button
-    lateinit var txtResult: TextView
+    // Declare the necessary UI components (these will link to XML elements)
+    lateinit var spinnerTime: Spinner     // Dropdown for selecting time
+    lateinit var btnSuggest: Button       // Button to generate suggestion
+    lateinit var btnReset: Button         // Button to reset the app
+    lateinit var txtResult: TextView      // TextView to display output
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
-        // Link UI elements
         spinnerTime = findViewById(R.id.spinnerTime)
         btnSuggest = findViewById(R.id.btnSuggest)
         btnReset = findViewById(R.id.btnReset)
         txtResult = findViewById(R.id.txtResult)
 
-        // Dropdown options
+        // Create a list of time options for the dropdown (Spinner)
         val times = arrayOf(
-            "Select Time",
+            "Select Time",     // Default option (acts like a placeholder)
             "Morning",
             "Mid-morning",
             "Afternoon",
@@ -32,36 +33,55 @@ class MainActivity : AppCompatActivity() {
             "Night"
         )
 
-        // Adapter for spinner
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, times)
+        // Create an adapter to connect the array to the Spinner UI
+        val adapter = ArrayAdapter(
+            this,                                  // Current activity context
+            android.R.layout.simple_spinner_dropdown_item, // Default layout style
+            times                                  // Data source (array)
+        )
+
+        // Attach the adapter to the spinner
         spinnerTime.adapter = adapter
 
-        // Suggest button
+        // Set what happens when the "Get Suggestion" button is clicked
         btnSuggest.setOnClickListener {
 
+            // Get the selected item from the spinner as a string
             val selected = spinnerTime.selectedItem.toString()
 
+            // Check if user has not selected a valid option
             if (selected == "Select Time") {
+                // Display error message
                 txtResult.text = "Please select a time first!"
-                return@setOnClickListener
+                return@setOnClickListener  // Stop further execution
             }
 
+            // Use a when statement to determine suggestion
             val suggestion = when (selected.lowercase()) {
+
+                // Each case matches a time and returns a suggestion
                 "morning" ->
                 "mid-morning" ->
                 "afternoon" ->
                 "evening" ->
                 "dinner" ->
                 "night" ->
+
+                // Default case if the user inputs an invalid time of day
                 else -> "Try again!"
             }
 
+            // Display the suggestion in the TextView
             txtResult.text = suggestion
         }
 
-        // Reset button
+        // Set what happens when the "Reset" button is clicked
         btnReset.setOnClickListener {
+
+            // Reset spinner back to the first option ("Select Time")
             spinnerTime.setSelection(0)
+
+            // Reset the result text to default message
             txtResult.text = "Your suggestion will appear here 💡"
         }
     }
