@@ -60,12 +60,12 @@ class MainActivity : AppCompatActivity() {
             val suggestion = when (selected.lowercase()) {
 
                 // Each case matches a time and returns a suggestion
-                "morning" ->
-                "mid-morning" ->
-                "afternoon" ->
-                "evening" ->
-                "dinner" ->
-                "night" ->
+                "morning" -> "Go on a refreshing morning jog with a friend!"
+                "mid-morning" -> "Catch up with a friend over a tasty breakfast and freshly brewed coffee"
+                "afternoon" -> "Picnic day at the park with a friend!"
+                "evening" -> "Get your friend group together for a fun game night"
+                "dinner" -> "Host a dinner party, potluck style!"
+                "night" -> "Go on a nice evening walk and stargaze with a partner or close friend"
 
                 // Default case if the user inputs an invalid time of day
                 else -> "Try again!"
