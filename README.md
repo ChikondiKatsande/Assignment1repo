@@ -19,8 +19,7 @@ Objectives
 
  User Interface Preview
  Home Screen
- 
-
+ https://github.com/ChikondiKatsande/Assignment1repo/blob/f1d5e466da1898cb3b6fe5aad6191753cc2f1de4/Screenshot%202026-03-29%20194443.png
 Time Selection
  
  
