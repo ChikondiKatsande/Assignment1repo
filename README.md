@@ -1,14 +1,18 @@
 Social Sparks App
+
 Chikondi Katsande
 ST10540608
+
 Overview
 Social Sparks is a modern Android application designed to promote meaningful social interaction through small, thoughtful daily actions.
 The app provides users with context-based suggestions depending on the selected time of day.
+
 Objectives
 •	Encourage positive communication and social engagement
 •	Demonstrate understanding of Android development using Kotlin
 •	Apply user interface design principles
 •	Implement version control using Git and GitHub
+
  Features
 •	 Time-based suggestion system
 •	 Spinner (dropdown) for user-friendly input
@@ -24,9 +28,8 @@ Time Selection
  https://github.com/ChikondiKatsande/Assignment1repo/blob/757e586842b8cb8c6754b5a0df368c9958565590/Screenshot%202026-03-29%20194308.png
  
  Suggestion Output
+ https://github.com/ChikondiKatsande/Assignment1repo/blob/b62f239f4b2798013cfa212befc6763e34b3b431/Screenshot%202026-03-29%20194356.png
  
- 
- Reset Function
  
  How It Works
 1.	The user selects a time of day from the dropdown menu
@@ -51,19 +54,25 @@ Night -> “Go on a nice evening walk and stargaze with a partner or close frien
 •	Navigate to the cloned folder
 🔹 Run the app
 •	Connect an Android device or start an emulator
-•	Click ▶ Run
+•	Click -> Run
  Version Control
 This project uses Git for version control.
+
 Development progress was tracked through multiple commits, including:
 •	Initial project setup
 •	UI implementation
 •	UI enhancements
 •	Testing and bug fixes
+
  Testing
 Basic testing was performed to ensure:
 •	Correct suggestions are displayed for each time option
 •	Invalid selections are handled properly
 •	Reset functionality works as expected
+
+Youtube video link:
+https://youtu.be/L5Og_Npihgo
+
 References
 Android Developers. (2024) Build your first app. Available at: https://developer.android.com/ 
 Android Developers. (2024) User interface design basics. Available at: https://developer.android.com/guide/topics/ui 
