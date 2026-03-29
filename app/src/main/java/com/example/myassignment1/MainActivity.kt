@@ -2,7 +2,10 @@ package com.example.myassignment1
 
 import android.os.Bundle
 import android.widget.*
+import com.airbnb.lottie.LottieAnimationView
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnSuggest: Button       // Button to generate suggestion
     lateinit var btnReset: Button         // Button to reset the app
     lateinit var txtResult: TextView      // TextView to display output
+    lateinit var lottieFullScreen: LottieAnimationView // Full screen lottie animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         btnSuggest = findViewById(R.id.btnSuggest)
         btnReset = findViewById(R.id.btnReset)
         txtResult = findViewById(R.id.txtResult)
+        lottieFullScreen = findViewById(R.id.lottieFullScreen)
+
 
         // Create a list of time options for the dropdown (Spinner)
         val times = arrayOf(
@@ -52,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             // Check if user has not selected a valid option
             if (selected == "Select Time") {
                 // Display error message
-                txtResult.text = "Please select a time first!"
+                txtResult.text = "Sugestion not available"
                 return@setOnClickListener  // Stop further execution
             }
 
@@ -71,8 +77,19 @@ class MainActivity : AppCompatActivity() {
                 else -> "Try again!"
             }
 
-            // Display the suggestion in the TextView
+            // Display suggestion
             txtResult.text = suggestion
+
+// Show full-screen animation
+            lottieFullScreen.visibility = View.VISIBLE
+
+// Play animation
+            lottieFullScreen.playAnimation()
+
+// Hide animation after it finishes (2 seconds)
+            lottieFullScreen.postDelayed({
+                lottieFullScreen.visibility = View.GONE
+            }, 2000)
         }
 
         // Set what happens when the "Reset" button is clicked
